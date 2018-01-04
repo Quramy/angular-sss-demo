@@ -55,7 +55,7 @@
     "reg-notify-github-plugin": "^0.6.3",
     "reg-publish-s3-plugin": "^0.6.3",
     "reg-suit": "^0.6.3",
-    "storybook-chrome-screenshot": "^0.9.0",
+    "@quramy/storybook-chrome-screenshot": "0.9.1",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
     "typescript": "~2.4.2"
