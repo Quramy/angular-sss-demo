@@ -1,7 +1,7 @@
 {
   "core": {
     "workingDir": ".reg",
-    "actualDir": "__screenshot__",
+    "actualDir": "__screenshots__",
     "threshold": 0,
     "addIgnore": true,
     "ximgdiff": {
