@@ -2,13 +2,14 @@ import { storiesOf } from '@storybook/angular';
 import { withNotes } from '@storybook/addon-notes';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
+import { withScreenshot } from 'storybook-chrome-screenshot';
 
 import { Welcome, Button } from '@storybook/angular/demo';
 
-storiesOf('Welcome', module).add('to Storybook', () => ({
+storiesOf('Welcome', module).add('to Storybook', withScreenshot()(() => ({
   component: Welcome,
   props: {},
-}));
+})));
 
 storiesOf('Button', module)
   .add('with text', () => ({
