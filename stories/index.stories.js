@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/angular';
 import { withNotes } from '@storybook/addon-notes';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
-import { withScreenshot } from 'storybook-chrome-screenshot';
+import { withScreenshot } from '@quramy/storybook-chrome-screenshot';
 
 import { Welcome, Button } from '@storybook/angular/demo';
 
