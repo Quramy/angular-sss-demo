@@ -1,27 +1,56 @@
-# AngularSssDemo
+# Angular Storybook Screenshot Snapshot testing demonstration [![CircleCI](https://circleci.com/gh/Quramy/angular-sss-demo.svg?style=svg)](https://circleci.com/gh/Quramy/angular-sss-demo)
 
+A demonstration Angular project includes:
+
+- Storybook
+- Screenshot stories
+- Snapshot test using PNG files
+
+## How to setup
+
+### Angular
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.4.
 
-## Development server
+### Storybook
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+[Storybook](https://storybook.js.org/) is interactive environment for UI component development.
 
-## Code scaffolding
+```sh
+yarn add @storybook/angular -D
+yarn run getstorybook
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The above command adds `storybook` task to your package.json.
 
-## Build
+```sh
+yarn storybook
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+And go to `http://localhost:6006/`. You can preview stories.
 
-## Running unit tests
+### Screenshot
+Using [storybook-chrome-screenshot](https://github.com/tsuyoshiwada/storybook-chrome-screenshot) addon, we can capture each story as PNG image file.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+To install this addon, we need to change several files. 
+To detail, see https://github.com/Quramy/angular-sss-demo/commit/cf03a041004643c610b8671a07e866149df662f8 .
 
-## Running end-to-end tests
+After setup, run `yarn screenshot`. Each story is generated as PNG file under the `__screenshot__` directory.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Snapshot testing
+[reg-suit](https://reg-viz.github.io/reg-suit/) provides visual snapshot testing environment.
+This tool compares images captured and reports the difference them ([generated report](https://reg-publish-bucket-e4c131e5-5128-47aa-8bd0-c9b4456c7618.s3.amazonaws.com/a4068effae2fd0caebbb5e490a01b47d5aa1669b/index.html)).
 
-## Further help
+reg-suit is a CLI and provides init wizard:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```sh
+yarn add reg-suit -D
+yarn run reg-suit init --use-yarn
+```
+
+If you want more installation details, check https://github.com/reg-viz/reg-puppeteer-demo#configure-reg-suit out.
+
+And the following command runs visual regression testing:
+
+```sh
+yarn run reg-suit run
+```
