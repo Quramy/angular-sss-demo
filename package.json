@@ -11,6 +11,7 @@
     "e2e": "ng e2e",
     "storybook": "start-storybook -p 6006",
     "screenshot": "storybook-chrome-screenshot -p 6007",
+    "regression": "reg-suit run",
     "build-storybook": "build-storybook"
   },
   "private": true,

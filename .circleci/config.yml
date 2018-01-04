@@ -31,5 +31,5 @@ jobs:
 
       # run tests!
       - run: yarn screenshot
-      - run: ls -la __screenshots__
+      - run: yarn regression
 
