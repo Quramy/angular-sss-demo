@@ -3,4 +3,4 @@
 import '@storybook/addon-actions/register';
 import '@storybook/addon-links/register';
 import '@storybook/addon-notes/register';
-import '@quramy/storybook-chrome-screenshot/register';
+import 'storybook-chrome-screenshot/register';
